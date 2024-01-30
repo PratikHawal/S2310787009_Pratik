@@ -3,7 +3,7 @@ import matplotlib.pyplot as pyplot
 import numpy as np
 
 class BrakingDistance:
-    def _init_(self, initial_velocity, deceleration):
+    def __init__(self, initial_velocity, deceleration):
         self.initial_velocity = initial_velocity
         self.deceleration = deceleration
 
@@ -57,10 +57,10 @@ def main():
     print(f"The braking distance is: {b_distance} meters")
 
     time_points = np.arange(0, time_interval + 0.1, 0.1)
-    velocities = braking_distance_calculator.calculate_velocity_time_graph(time_points)
-    distances = braking_distance_calculator.calculate_distance_time_graph(time_points)
+    velocities = braking_distance_calculator.calculate_velocities(time_points)
+    distances = braking_distance_calculator.calculate_distances(time_points)
 
     plot_graphs(time_points, velocities, distances)
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     main()
